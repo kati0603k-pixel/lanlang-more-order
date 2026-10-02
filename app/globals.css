@@ -1,0 +1,95 @@
+:root {
+  --bg: #f6f3ee;
+  --ink: #1f2a24;
+  --muted: #5d6a63;
+  --green: #2f5d46;
+  --green-ink: #ffffff;
+  --line: #d9d3c7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161b18;
+    --ink: #eef0ec;
+    --muted: #a2aea7;
+    --green: #7fc29b;
+    --green-ink: #10201a;
+    --line: #2c3530;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.home {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 18vh 24px 48px;
+}
+
+.home h1 {
+  font-size: clamp(2.6rem, 11vw, 4rem);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.home p {
+  margin: 0 0 40px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.links {
+  display: grid;
+  gap: 12px;
+}
+
+.link {
+  display: block;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.link.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--green-ink);
+}
+
+.link.primary small {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.link:hover {
+  border-color: var(--green);
+}
